@@ -1,0 +1,20 @@
+@import "../style/_config.scss";
+
+.list {
+  position: absolute;
+  width: 50vmin;
+  height: 30vmin;
+  top: 1.5vmin;
+  right: 0;
+  bottom: 0;
+  left: -10vmin;
+  margin: auto;
+  box-sizing: border-box;
+  background: $list-color;
+  border-radius: 10% 10%;
+  text-align: center;
+}
+
+title {
+  margin: 10vmin;
+}
