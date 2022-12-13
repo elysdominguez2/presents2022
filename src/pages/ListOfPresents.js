@@ -17,21 +17,24 @@ export default function ListOfPresents() {
   return (
     <div className="list">
       <h1 className="title">List of presents 2022</h1>
-      <p> You can add more presents</p>
 
-      <form onSubmit={submit}>
+      <form className="form" onSubmit={submit}>
         <input
+          className="add-gift"
           type="text"
+          placeholder="Add more presents"
           value={gift}
           onChange={(e) => setGift(e.target.value)}
         ></input>
-        <button type="submit">Add</button>
+        <button type="submit" className="button-add">
+          Add
+        </button>
       </form>
 
       <h2 className="subTitle">Presents:</h2>
-      {presents.map((p) => {
+      {presents.map((p, index) => {
         return (
-          <div>
+          <div key={index}>
             <Presents present={p} />
           </div>
         );
