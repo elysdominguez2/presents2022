@@ -9,9 +9,19 @@ export default function ListOfPresents() {
   const submit = (event) => {
     event.preventDefault();
     const updateGift = gift;
-    console.log(updateGift);
     setPresents([...presents, updateGift]);
     setGift("");
+  };
+
+  const removePresent = (presentToRemove) => {
+    const newPresents = presents.filter((g) => {
+      if (g === presentToRemove) {
+        return false;
+      } else {
+        return "There is no presents";
+      }
+    });
+    setPresents(newPresents);
   };
 
   return (
@@ -31,11 +41,14 @@ export default function ListOfPresents() {
         </button>
       </form>
 
-      <h2 className="subTitle">Presents:</h2>
       {presents.map((p, index) => {
         return (
           <div key={index}>
-            <Presents present={p} />
+            <Presents
+              present={p}
+              presents={presents}
+              removePresent={removePresent}
+            />
           </div>
         );
       })}

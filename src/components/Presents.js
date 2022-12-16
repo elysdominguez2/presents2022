@@ -1,15 +1,14 @@
 export default function Presents(props) {
-  const p = props.present;
-
-  const removePresent = () => {
-    console.log("This is p", p);
+  const onClickDelete = () => {
+    props.removePresent(props.present);
   };
+
   return (
     <div>
       <ul>
         <li>
-          {[props.present]}{" "}
-          <button className="delete-gift" onClick={removePresent}>
+          <p className="present"> {[props.present]}</p>
+          <button className="delete-gift" onClick={onClickDelete}>
             X
           </button>
         </li>
