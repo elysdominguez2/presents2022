@@ -24,6 +24,10 @@ export default function ListOfPresents() {
     setPresents(newPresents);
   };
 
+  const removeAllPresents = () => {
+    setPresents([]);
+  };
+
   return (
     <div className="list">
       <h1 className="title">List of presents 2022</h1>
@@ -52,6 +56,10 @@ export default function ListOfPresents() {
           </div>
         );
       })}
+
+      <button className="delete" onClick={removeAllPresents}>
+        Delete all presents
+      </button>
     </div>
   );
 }

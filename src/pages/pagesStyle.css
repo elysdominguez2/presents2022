@@ -1,11 +1,11 @@
 .list {
-  position: absolute;
-  width: 50vmin;
-  top: 10vmin;
+  width: 70vmin;
+  padding: 5vmin;
   right: 0;
   bottom: 10vmin;
   left: -10vmin;
   margin: auto;
+  margin-top: 10vmin;
   box-sizing: border-box;
   background: #fff;
   border-radius: 2%;
@@ -23,8 +23,9 @@
   background: rgb(185, 234, 194);
   padding-top: 2vmin;
   padding-bottom: 2vmin;
-  padding-left: 2vmin;
-  padding-right: 15vmin;
+  padding-left: 7vmin;
+  padding-right: 7vmin;
+  margin: 3vmin 0;
   border: 0;
   border-radius: 2%;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
@@ -42,14 +43,17 @@
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
+ul {
+  padding: 0;
+}
+
 li {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.delete-gift {
-  margin-right: 5vmin;
+.delete {
   background: rgb(244, 107, 107);
   border: 0;
   padding: 1vmin;

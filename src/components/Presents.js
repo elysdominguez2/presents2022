@@ -8,7 +8,7 @@ export default function Presents(props) {
       <ul>
         <li>
           <p className="present"> {[props.present]}</p>
-          <button className="delete-gift" onClick={onClickDelete}>
+          <button className="delete" onClick={onClickDelete}>
             X
           </button>
         </li>
