@@ -45,21 +45,29 @@ export default function ListOfPresents() {
         </button>
       </form>
 
-      {presents.map((p, index) => {
-        return (
-          <div key={index}>
-            <Presents
-              present={p}
-              presents={presents}
-              removePresent={removePresent}
-            />
-          </div>
-        );
-      })}
+      {!presents.length ? (
+        <div>
+          <h3>Santa is waiting, add some presents</h3>
+        </div>
+      ) : (
+        <div>
+          {presents.map((p, index) => {
+            return (
+              <div key={index}>
+                <Presents
+                  present={p}
+                  presents={presents}
+                  removePresent={removePresent}
+                />
+              </div>
+            );
+          })}
 
-      <button className="delete" onClick={removeAllPresents}>
-        Delete all presents
-      </button>
+          <button className="delete" onClick={removeAllPresents}>
+            Delete all presents
+          </button>
+        </div>
+      )}
     </div>
   );
 }
