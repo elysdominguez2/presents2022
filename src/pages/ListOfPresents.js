@@ -5,12 +5,29 @@ import Presents from "../components/Presents";
 export default function ListOfPresents() {
   const [gift, setGift] = useState("");
   const [presents, setPresents] = useState([]);
+  const [message, setMessage] = useState(false);
 
   const submit = (event) => {
     event.preventDefault();
+
+    if (gift === "") {
+      setMessage("You have to add a present");
+      return;
+    }
+
+    function sameGift(g) {
+      return g === gift;
+    }
+
+    if (presents.some(sameGift)) {
+      setMessage("You can not repeat presents");
+      return;
+    }
+
     const updateGift = gift;
     setPresents([...presents, updateGift]);
     setGift("");
+    setMessage("");
   };
 
   const removePresent = (presentToRemove) => {
@@ -39,11 +56,14 @@ export default function ListOfPresents() {
           placeholder="Add more presents"
           value={gift}
           onChange={(e) => setGift(e.target.value)}
+          //   required
         ></input>
         <button type="submit" className="button-add">
           Add
         </button>
       </form>
+
+      <h4>{message}</h4>
 
       {!presents.length ? (
         <div>
